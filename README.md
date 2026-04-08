@@ -23,6 +23,13 @@ uv sync
 
 Create a `.env` file in the root directory:
 
+#### Without Tracing
+Note : without tracing, you need to remove config`(config = {"configurable":{"thread_id":42}})` and replace `result = graph.invoke({"messages": [system_prompt, HumanMessage(content=query)]}, config)` with `result = graph.invoke({"messages": [system_prompt, HumanMessage(content=query)]})` in utils/graph.py
+```dotenv
+GOOGLE_API_KEY=""
+```
+
+#### With Tracing
 ```dotenv
 LANGSMITH_TRACING=true
 LANGSMITH_API_KEY=""
